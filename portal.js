@@ -42,14 +42,14 @@ function signIN() {
     }
 
 }
-// function sign() {
-//     let allStudent= JSON.parse(localStorage.getItem("myStudent"))
-//     let t = ""
-//     for (let i = 0; i < allStudent.length; i++) {
-//         t += `<tr>`
-//         t += `<td>${i+1}</td><td>${allStudent[i].firstname}</td><td>${allStudent[i].lastname}</td><td>${allStudent[i].age}</td>`
-//         t += `</tr>` 
-//         console.log(allStudent[i])
-//     }
-//     display.innerHTML = t;
-// }
+function sign() {
+    let allStudent= JSON.parse(localStorage.getItem("myStudent"))
+    let t = ""
+    for (let i = 0; i < allStudent.length; i++) {
+        t += `<tr>`
+        t += `<td>${i+1}</td><td>${allStudent[i].firstname}</td><td>${allStudent[i].lastname}</td><td>${allStudent[i].age}</td>`
+        t += `</tr>` 
+        console.log(allStudent[i])
+    }
+    display.innerHTML = t;
+}
