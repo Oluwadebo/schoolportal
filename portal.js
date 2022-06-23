@@ -25,23 +25,23 @@ function signup(){
     console.log(allStudent)
     location.replace('signin.html')
 }
-// function siup() {
-//     localStorage.replace('signin.html')
-// }
-// function signIN() {
-//     let userEmail = email.value;
-//     let userPassword = password.value;
-//     let students= JSON.parse(localStorage.getItem("myStudent"))
-//     for (let i = 0; i < students.length; i++) {
-//         if (userEmail == students[i].email && userPassword == students[i].password) {
-//             location.replace('dashboard.html')
-//         }else{
-//             //  alert("INCORRECT EMAIL OR INCORRECT PASSWORD")
-//            location.reload()
-//         }
-//     }
+function siup() {
+    localStorage.replace('signin.html')
+}
+function signIN() {
+    let userEmail = email.value;
+    let userPassword = password.value;
+    let students= JSON.parse(localStorage.getItem("myStudent"))
+    for (let i = 0; i < students.length; i++) {
+        if (userEmail == students[i].email && userPassword == students[i].password) {
+            location.replace('dashboard.html')
+        }else{
+            //  alert("INCORRECT EMAIL OR INCORRECT PASSWORD")
+           location.reload()
+        }
+    }
 
-// }
+}
 // function sign() {
 //     let allStudent= JSON.parse(localStorage.getItem("myStudent"))
 //     let t = ""
