@@ -36,8 +36,13 @@ function signIN() {
         if (userEmail == students[i].email && userPassword == students[i].password) {
             location.replace('dashboard.html')
         }else{
-            //  alert("INCORRECT EMAIL OR INCORRECT PASSWORD")
-           location.reload()
+            if (userEmail != students[i].email) {
+                rong.innerHTML = `Incorrect email address`
+                rong.style.color = "red"
+            }else if(userPassword != students[i].password){
+                rng.innerHTML = `Incorrect password`
+                rng.style.color = "red"
+            }
         }
     }
 
