@@ -64,8 +64,10 @@ function dele(){
     let allStudent = JSON.parse(localStorage.getItem("myStudent"))
     for (let i = fians; i < allStudent.length;) {
         if (confirm(`Are you sure, you want to delete S/N ${answer} details`) == true) {
-            allStudent.splice(allStudent, -1);
+            allStudent.splice(fians);
             console.log(allStudent);
+        }else{
+            alert("No changes made")
         }
     }
     
