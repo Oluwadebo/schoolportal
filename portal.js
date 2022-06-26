@@ -52,23 +52,26 @@ function sign() {
     let t = ""
     for (let i = 0; i < allStudent.length; i++) {
         t += `<tr>`
-        t += `<td>${i+1}</td><td>${allStudent[i].firstname}</td><td>${allStudent[i].lastname}</td><td>${allStudent[i].age}</td><td><button onclick="dele()" type="submit" class="btn btn-danger">delet</button></td>`
+        t += `<td>${i+1}</td>
+                <td>${allStudent[i].firstname}</td>
+                <td>${allStudent[i].lastname}</td>
+                <td>${allStudent[i].age}</td>
+                <td><button onclick="dele(${i})" type="submit" class="btn btn-danger">delet</button></td>
+                <td><button onclick="edit(${i})" type="submit" class="btn btn-primary">edit</button></td>`
         t += `</tr>` 
         console.log(allStudent[i])
     }
     display.innerHTML = t;
 }
-function dele(){
-    let answer = prompt("Enter your S/N");
-    let fians = answer - 1;
-    let allStudent = JSON.parse(localStorage.getItem("myStudent"))
-    for (let i = fians; i < allStudent.length;) {
-        if (confirm(`Are you sure, you want to delete S/N ${answer} details`) == true) {
-            allStudent.splice(fians);
-            console.log(allStudent);
-        }else{
-            alert("No changes made")
-        }
+function dele(i){
+    let answer = confirm("Are you sure, you want to delete")
+    if (answer == true) {
+        let allStudent = JSON.parse(localStorage.getItem("myStudent"))
+        allStudent.splice((i,i))
+        console.log(allStudent);
+        localStorage.myStudent = JSON.stringify(allStudent)
+        location.reload()
+    }else{
+        alert("No changes was made")
     }
-    
 }
