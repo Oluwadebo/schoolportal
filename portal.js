@@ -1,3 +1,6 @@
+var d = new Date();
+dilay.innerHTML = d;
+
 allStudent = [];
 function signup(){
     if (localStorage.myStudent) {
@@ -5,8 +8,8 @@ function signup(){
     }else{}
     let fName = firstname.value;
     let lName = lastname.value;
-    let userEmail = email.value;
     let userAge = age.value;
+    let userEmail = email.value;
     let userPassword = password.value;
     firstname.value = ""
     lastname.value = ""
@@ -16,8 +19,8 @@ function signup(){
     informatio = {
         firstname:fName,
         lastname: lName,
-        email:userEmail,
         age:userAge,
+        email:userEmail,
         password:userPassword,
     }
     allStudent.push(informatio)
@@ -74,4 +77,26 @@ function dele(i){
     }else{
         alert("No changes was made")
     }
+}
+function edit(i){
+    let answer = confirm("Are you sure, you want to some changes")
+    if (answer == true) {
+        let allStudent = JSON.parse(localStorage.getItem("myStudent"))
+        let fName = prompt("Enter your FirstName")
+        let lName = prompt("Enter your LastName")
+        let userAge = prompt("Enter your age")
+        informatio = {
+            firstname:fName,
+            lastname: lName,
+            age:userAge,
+        }
+        allStudent.splice((i,i,"informatio"))
+        // fName = allStudent[i].firstname.value;
+        // lName = allStudent[i].lastname.value;
+        // userAge = allStudent[i].age.value;
+        // let onformation =  `${fName} ${lName} ${userAge}`
+        console.log(allStudent);
+    }else{
+        alert("No changes was made")
+    } 
 }
